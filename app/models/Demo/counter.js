@@ -4,16 +4,16 @@ export default {
   namespace: 'counter',
   state: 0,
   effects: {
-    * increment({ payload }, { put }) {
+    * increment({ _ }, { put }) {
       yield put({ type: 'incrementReducer' })
     },
-    * decrement({ payload }, { put }) {
+    * decrement({ _ }, { put }) {
       yield put({ type: 'decrementReducer' })
     },
-    * incrementIfOdd({ payload }, { put }) {
+    * incrementIfOdd({ _ }, { put }) {
       yield put({ type: 'incrementIfOddReducer' })
     },
-    * incrementAsync({ payload }, { call, put }) {
+    * incrementAsync({ _ }, { call, put }) {
       yield call(delay, 1000)
       yield put({ type: 'increment' })
     },

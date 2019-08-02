@@ -1,16 +1,33 @@
 // https://github.com/arackaf/customize-cra/blob/master/api.md
 const path = require('path')
-const { override, addWebpackAlias, addBabelPlugin } = require('customize-cra')
+const {
+  override,
+  useBabelRc,
+  useEslintRc,
+  addWebpackAlias,
+  addLessLoader,
+} = require('customize-cra')
 
 module.exports = {
   webpack: override(
-    addBabelPlugin(['react-require']),
+    useBabelRc(),
+    useEslintRc(),
+    addLessLoader({
+      javascriptEnabled: true,
+      noIeCompat: true,
+      localIdentName:
+        process.env.NODE_ENV === 'development'
+          ? '[path][name]__[local]--[hash:base64:5]'
+          : '[hash:base64:5]',
+    }),
     addWebpackAlias({
+      '@assets': path.resolve(__dirname, 'app/assets'),
       '@pages': path.resolve(__dirname, 'app/pages'),
       '@models': path.resolve(__dirname, 'app/models'),
       '@components': path.resolve(__dirname, 'app/components'),
       '@utils': path.resolve(__dirname, 'app/utils'),
       '@common': path.resolve(__dirname, 'app/common'),
+      '@services': path.resolve(__dirname, 'app/services'),
     }),
   ),
   paths(paths, env) {

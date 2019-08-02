@@ -1,5 +1,33 @@
-import React from 'react'
 import dynamic from 'dva/dynamic'
+
+function getRelation(str1, str2) {
+  if (str1 === str2) {
+    console.warn('Two path are equal!'); // eslint-disable-line
+  }
+  const arr1 = str1.split('/')
+  const arr2 = str2.split('/')
+  if (arr2.every((item, index) => item === arr1[index])) {
+    return 1
+  } if (arr1.every((item, index) => item === arr2[index])) {
+    return 2
+  }
+  return 3
+}
+
+function getRenderArr(routes) {
+  let renderArr = []
+  renderArr.push(routes[0])
+  for (let i = 1; i < routes.length; i += 1) {
+    // 去重
+    renderArr = renderArr.filter(item => getRelation(item, routes[i]) !== 1)
+    // 是否包含
+    const isAdd = renderArr.every(item => getRelation(item, routes[i]) === 3)
+    if (isAdd) {
+      renderArr.push(routes[i])
+    }
+  }
+  return renderArr
+}
 
 // wrapper of dynamic
 const dynamicWrapper = (app, models, component) => dynamic({
@@ -8,6 +36,7 @@ const dynamicWrapper = (app, models, component) => dynamic({
   models: () => models.filter(m => !app._models.some(({ namespace }) => namespace === m)).map(m => import(`../models/${m}.js`)),
   // add routerData prop
   component: () => {
+    // eslint-disable-next-line no-use-before-define
     const routerData = getRouterData(app)
     return component().then((raw) => {
       const Component = raw.default || raw
@@ -68,33 +97,4 @@ export function getRoutes(path, routerData) {
     }
   })
   return renderRoutes
-}
-
-function getRelation(str1, str2) {
-  if (str1 === str2) {
-    console.warn('Two path are equal!'); // eslint-disable-line
-  }
-  const arr1 = str1.split('/')
-  const arr2 = str2.split('/')
-  if (arr2.every((item, index) => item === arr1[index])) {
-    return 1
-  } if (arr1.every((item, index) => item === arr2[index])) {
-    return 2
-  }
-  return 3
-}
-
-function getRenderArr(routes) {
-  let renderArr = []
-  renderArr.push(routes[0])
-  for (let i = 1; i < routes.length; i += 1) {
-    // 去重
-    renderArr = renderArr.filter(item => getRelation(item, routes[i]) !== 1)
-    // 是否包含
-    const isAdd = renderArr.every(item => getRelation(item, routes[i]) === 3)
-    if (isAdd) {
-      renderArr.push(routes[i])
-    }
-  }
-  return renderArr
 }

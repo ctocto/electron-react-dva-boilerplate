@@ -69,3 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 
 https://flaviocopes.com/react-electron/
+
+### QA
+#### Unable to resolve path to module '@pages/Home/Home'  import/no-unresolved
+https://www.npmjs.com/package/eslint-import-resolver-alias

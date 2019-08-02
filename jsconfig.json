@@ -6,8 +6,10 @@
     "paths": {
       "@models/*": ["../app/models/*"],
       "@pages/*": ["../app/pages/*"],
+      "@assets/*": ["../app/assets/*"],
       "@utils/*": ["./app/utils/*"],
       "@components/*": ["../app/components/*"],
+      "@services/*": ["../app/services/*"],
       "@common/*": ["../app/common/*"]
     }
   },

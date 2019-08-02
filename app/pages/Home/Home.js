@@ -1,9 +1,8 @@
-import React from 'react'
 import { Link } from 'dva/router'
 
 import logo from '../../logo.svg'
 
-export default function Home(props) {
+export default function Home() {
   return (
     <div className="App">
       <header className="App-header">

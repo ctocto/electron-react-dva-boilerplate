@@ -1,16 +1,18 @@
-import * as React from 'react'
 import PropTypes from 'prop-types'
+
+import styles from './style.module.less'
 
 const Counter = ({
   value, onIncrement, onIncrementAsync, onDecrement, onIncrementIfOdd,
 }) => (
-  <p>
-    Clicked:
-    {' '}
-    {value}
-    {' '}
-times
-    {' '}
+  <div className={styles.Counter}>
+    <div>
+      Clicked:
+      {' '}
+      <span className={styles.Counter__yellow}>{value}</span>
+      {' '}
+      times
+    </div>
     <button type="button" onClick={onIncrement}>+</button>
     {' '}
     <button type="button" onClick={onDecrement}>-</button>
@@ -18,7 +20,7 @@ times
     <button type="button" onClick={onIncrementIfOdd}>Increment if odd</button>
     {' '}
     <button type="button" onClick={onIncrementAsync}>Increment async</button>
-  </p>
+  </div>
 )
 
 Counter.propTypes = {
