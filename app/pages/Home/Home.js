@@ -1,6 +1,7 @@
 import { Link } from 'dva/router'
 
-import logo from '../../logo.svg'
+import logo from '../../assets/logo.svg'
+import Hello from '../Demo/Hello'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           {' '}
 and save to reload.
         </p>
+        <Hello />
         <Link to="/demo/counter">to counter</Link>
       </header>
     </div>

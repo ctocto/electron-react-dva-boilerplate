@@ -1,3 +1,6 @@
+/**
+ * 作用是等待React服务启动后再启动Electron
+ */
 const net = require('net')
 const childProcess = require('child_process')
 

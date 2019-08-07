@@ -1,11 +1,14 @@
 {
-  "name": "self-maxico",
+  "name": "electron-react-dva-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "northernerve",
+    "email": "northernerve@gmail.com"
+  },
   "dependencies": {
     "customize-cra": "^0.4.1",
     "dva": "^2.4.1",
-    "electron": "^6.0.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -28,23 +31,77 @@
   "main": "src/start.js",
   "scripts": {
     "start": "nf start -p 3000",
-    "build": "react-scripts build",
+    "build": "react-app-rewired build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node src/start-react",
     "react-start": "BROWSER=none react-app-rewired start",
-    "pack": "build --dir",
-    "dist": "npm run build && build",
-    "postinstall": "install-app-deps"
+    "pack": "electron-builder --dir",
+    "dist": "npm run build && electron-builder",
+    "dist-all": "electron-builder -mwl",
+    "dist-mac": "electron-builder -m",
+    "dist-win": "electron-builder -w",
+    "dist-linux": "electron-builder -l",
+    "postinstall": "electron-builder install-app-deps"
   },
   "build": {
+    "productName": "ElectronReactDvaBoilerplate",
     "appId": "com.electron.electron-with-create-react-app",
-    "win": {
-      "iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
-    },
+    "publish": [
+      {
+        "provider": "github",
+        "repo": "electron-react-dva-boilerplate"
+      }
+    ],
     "directories": {
-      "buildResources": "public"
+      "buildResources": "resources",
+      "output": "release"
+    },
+    "extends": null,
+    "files": [
+      "dist/**/*",
+      "src/**/*",
+      "package.json"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ],
+      "category": "Development"
     }
   },
   "lint-staged": {
@@ -56,20 +113,12 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    "electron >= 1.6"
+  ],
   "devDependencies": {
     "babel-plugin-react-require": "^3.1.1",
+    "electron": "^6.0.0",
     "electron-builder": "^21.1.5",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.18.2",
