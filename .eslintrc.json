@@ -28,6 +28,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "import/no-extraneous-dependencies": [0],
     "react/react-in-jsx-scope": [0],
     "no-const-assign": "warn",
     "no-this-before-super": "warn",

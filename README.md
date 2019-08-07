@@ -43,3 +43,8 @@ module.exports = {
   },
 }
 ```
+#### '@pages/Demo' should be listed in the project's dependencies. Run 'npm i -S @pages/Demo' to add it            import/no-extraneous-dependencies
+have no alternative
+```
+"import/no-extraneous-dependencies": [0]
+```

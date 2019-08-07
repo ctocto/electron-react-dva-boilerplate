@@ -1,7 +1,7 @@
 import { Link } from 'dva/router'
 
-import logo from '../../assets/logo.svg'
-import Hello from '../Demo/Hello'
+import logo from '@assets/logo.svg'
+import Hello from '@pages/Demo/Hello'
 
 export default function Home() {
   return (
