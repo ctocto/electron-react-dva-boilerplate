@@ -38,7 +38,7 @@
     "electron-start": "node src/start-react",
     "react-start": "BROWSER=none react-app-rewired start",
     "pack": "electron-builder --dir",
-    "dist": "npm run build && electron-builder",
+    "dist": "npm run build && electron-builder --publish onTagOrDraft",
     "dist-all": "electron-builder -mwl",
     "dist-mac": "electron-builder -m",
     "dist-win": "electron-builder -w",
