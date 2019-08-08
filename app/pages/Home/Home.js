@@ -11,9 +11,9 @@ export default function Home() {
         <p>
           Edit
           {' '}
-          <code>src/App.js</code>
+          <code>app/App.js</code>
           {' '}
-and save to reload.
+          and save to reload.
         </p>
         <Hello />
         <Link to="/demo/counter">to counter</Link>

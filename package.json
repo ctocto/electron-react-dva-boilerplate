@@ -118,7 +118,7 @@
   ],
   "devDependencies": {
     "babel-plugin-react-require": "^3.1.1",
-    "electron": "^6.0.0",
+    "electron": "^6.0.1",
     "electron-builder": "^21.1.5",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.18.2",
