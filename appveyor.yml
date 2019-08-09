@@ -6,6 +6,9 @@ cache:
   - '%APPDATA%\npm-cache'
   - '%USERPROFILE%\.electron'
 
+environment:
+  CI: false
+
 install:
   - ps: Install-Product node 12 x64
   - npm install
