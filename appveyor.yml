@@ -17,17 +17,6 @@ build_script:
   - npm run dist
 
 test: off
-# https://www.appveyor.com/docs/deployment/github/#configuring-in-appveyoryml
-deploy:
-  release: v$(appveyor_build_version)
-  repository: ctocto/electron-react-dva-boilerplate
-  provider: GitHub
-  auth_token:
-    secure: qG6kCNIpRvpCWiqcG7PuV8xSGqSraOKag3EMebJ7UHhjMLtacI+gonTprx9/j4gx
-  draft: false
-  prerelease: false
-  on:
-    APPVEYOR_REPO_TAG: true
 
 branches:
   only:
