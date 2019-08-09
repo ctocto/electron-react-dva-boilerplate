@@ -24,6 +24,7 @@ $ npm run dist
 
 
 ### QA
+
 #### Unable to resolve path to module '@pages/Home/Home'  import/no-unresolved
 https://www.npmjs.com/package/eslint-import-resolver-alias
 
@@ -42,11 +43,13 @@ module.exports = {
   },
 }
 ```
+
 #### '@pages/Demo' should be listed in the project's dependencies. Run 'npm i -S @pages/Demo' to add it            import/no-extraneous-dependencies
 have no alternative
 ```
 "import/no-extraneous-dependencies": [0]
 ```
+
 #### Treating warnings as errors because process.env.CI = true.
 ```
 Creating an optimized production build...
@@ -65,3 +68,6 @@ env:
 ```
 "build": "set \"CI=false\" && react-app-rewired build",
 ```
+
+#### `electron-builder --publish onTagOrDraft`
+`appveyor CI`,`travis CI` No settings required `conditional-releases`

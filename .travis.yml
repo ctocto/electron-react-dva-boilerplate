@@ -28,6 +28,21 @@ install:
 
 script:
   - npm run dist
+# https://docs.travis-ci.com/user/deployment#conditional-releases-with-on
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: 
+#   file_glob: true
+#   file:
+#     - "release/**.zip"
+#     - "release/**.dmg"
+#     - "release/**.exe"
+#    - "release/**.yml"
+#  skip_cleanup: true
+#  on:
+#    repo: ctocto/electron-react-dva-boilerplate
+#    tags: true
 
 branches:
   only:
