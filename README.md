@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[DvaJS](https://dvajs.com/) React and redux based, lightweight and elm-style framework.
 
 ### Install
 ```github
@@ -21,8 +22,6 @@ To package apps for the local platform:
 $ npm run dist
 ```
 
-
-> https://flaviocopes.com/react-electron/
 
 ### QA
 #### Unable to resolve path to module '@pages/Home/Home'  import/no-unresolved

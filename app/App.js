@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
 
 import { Router, Route, Switch } from 'dva/router'
-import { getRouterData, getRoutes } from './common/router'
+import { getRouterData, getRoutes } from '@common/router'
 
-import './App.css'
-
+import './index.css'
 
 function App({ history, app }) {
   const routerData = getRoutes('', getRouterData(app))

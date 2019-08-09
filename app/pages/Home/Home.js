@@ -3,11 +3,13 @@ import { Link } from 'dva/router'
 import logo from '@assets/logo.svg'
 import Hello from '@pages/Demo/Hello'
 
+import styles from './style.module.less'
+
 export default function Home() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className={styles.App}>
+      <header className={styles.AppHeader}>
+        <img src={logo} className={styles.AppLogo} alt="logo" />
         <p>
           Edit
           {' '}
