@@ -47,3 +47,17 @@ have no alternative
 ```
 "import/no-extraneous-dependencies": [0]
 ```
+#### Treating warnings as errors because process.env.CI = true.
+```
+Creating an optimized production build...
+Treating warnings as errors because process.env.CI = true.
+Most CI servers set it automatically.
+Failed to compile.
+```
+`.travis.yml`
+```
+env:
+  global:
+    - CI=false
+```
+`.appveyor.yml`
