@@ -17,6 +17,20 @@ build_script:
   - npm run dist
 
 test: off
+# https://www.appveyor.com/docs/deployment/github/#configuring-in-appveyoryml
+deploy:
+  release: v$(appveyor_build_version)
+  repository: ctocto/electron-react-dva-boilerplate
+  provider: GitHub
+  artifact:              # upload all NuGet packages to release assets
+    - "release/**.zip"
+    - "release/**.dmg"
+    - "release/**.exe"
+    - "release/**.yml"
+  draft: false
+  prerelease: false
+  on:
+    APPVEYOR_REPO_TAG: true
 
 branches:
   only:

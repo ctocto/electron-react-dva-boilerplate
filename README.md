@@ -61,3 +61,7 @@ env:
     - CI=false
 ```
 `.appveyor.yml`
+> https://stackoverflow.com/questions/52888214/how-to-set-environment-variable-in-react-js
+```
+"build": "set \"CI=false\" && react-app-rewired build",
+```
