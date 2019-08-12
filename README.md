@@ -1,3 +1,6 @@
+# electron-react-dva-boilerplate [![Build Status](https://travis-ci.org/ctocto/electron-react-dva-boilerplate.svg?branch=master)](https://travis-ci.org/ctocto/electron-react-dva-boilerplate) [![Build status](https://ci.appveyor.com/api/projects/status/41gt4n789837ftps?svg=true)](https://ci.appveyor.com/project/Northerner/electron-react-dva-boilerplate)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 [DvaJS](https://dvajs.com/) React and redux based, lightweight and elm-style framework.
