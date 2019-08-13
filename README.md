@@ -75,3 +75,16 @@ env:
 
 #### `electron-builder --publish onTagOrDraft`
 `appveyor CI`,`travis CI` No settings required `conditional-releases`
+
+#### `TypeError: fs.existsSync is not a function`
+```
+  3 | 
+  4 | var pathFile = path.join(__dirname, 'path.txt')
+  5 | 
+> 6 | if (fs.existsSync(pathFile)) {
+  7 |   module.exports = path.join(__dirname, fs.readFileSync(pathFile, 'utf-8'))
+  8 | } else {
+  9 |   throw new Error('Electron failed to install correctly, please delete node_modules/electron and try installing again')
+
+```
+https://github.com/electron/electron/issues/9920#issuecomment-508276131

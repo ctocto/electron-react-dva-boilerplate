@@ -8,10 +8,16 @@ const {
   addLessLoader,
 } = require('customize-cra')
 
+const addWebpackTarget = target => (config) => {
+  config.target = target
+  return config
+}
+
 module.exports = {
   webpack: override(
     useBabelRc(),
     useEslintRc(),
+    addWebpackTarget('electron-renderer'),
     addLessLoader({
       javascriptEnabled: true,
       noIeCompat: true,

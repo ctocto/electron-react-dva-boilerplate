@@ -51,7 +51,8 @@
       "error",
       "never"
     ],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-param-reassign": ["error", { "props": false }]
   },
   "parser": "babel-eslint",
   "extends": "airbnb",
