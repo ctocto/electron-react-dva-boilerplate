@@ -15,16 +15,21 @@ function Updater(mainWindow) {
     // 可以更新版本
     sendStatusToWindow('autoUpdater-canUpdate', info)
   })
-  // autoUpdater.on('update-not-available', (info) => {
-  //   // 不能够更新
-  // })
+  autoUpdater.on('update-not-available', (info) => {
+    // 不能够更新
+    global.log.info('autoUpdater-not-available', info)
+  })
   autoUpdater.on('error', (err) => {
     // 更新错误
     sendStatusToWindow('autoUpdater-error', err)
   })
   autoUpdater.on('download-progress', (progressObj) => {
     // 正在下载的下载进度
-    sendStatusToWindow('autoUpdater-progress', progressObj)
+    // sendStatusToWindow('autoUpdater-progress', progressObj)
+    let logMessage = `Download speed: ${progressObj.bytesPerSecond}`
+    logMessage = `${logMessage} - Downloaded ${progressObj.percent}%`
+    logMessage = `${logMessage} (${progressObj.transferred}/${progressObj.total})`
+    sendStatusToWindow(logMessage)
   })
   autoUpdater.on('update-downloaded', (info) => {
     // 下载完成

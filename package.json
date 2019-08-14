@@ -1,6 +1,6 @@
 {
   "name": "electron-react-dva-boilerplate",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": true,
   "author": {
     "name": "northernerve",
@@ -9,6 +9,8 @@
   "dependencies": {
     "customize-cra": "^0.4.1",
     "dva": "^2.4.1",
+    "electron-log": "^3.0.7",
+    "electron-updater": "^4.1.2",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -51,7 +53,8 @@
     "publish": [
       {
         "provider": "github",
-        "repo": "electron-react-dva-boilerplate"
+        "repo": "electron-react-dva-boilerplate",
+        "releaseType": "prerelease"
       }
     ],
     "directories": {
@@ -119,8 +122,7 @@
     "babel-plugin-react-require": "^3.1.1",
     "electron": "^6.0.1",
     "electron-builder": "^21.1.5",
-    "electron-log": "^3.0.7",
-    "electron-updater": "^4.1.2",
+    
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.18.2",
     "less": "^3.9.0",
