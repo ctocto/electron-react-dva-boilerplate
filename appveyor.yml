@@ -11,7 +11,7 @@ environment:
 
 install:
   - ps: Install-Product node 10 x64
-  - set CI=true
+  - set CI=false
   - npm install
 
 build_script:
