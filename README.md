@@ -61,6 +61,12 @@ Treating warnings as errors because process.env.CI = true.
 Most CI servers set it automatically.
 Failed to compile.
 ```
+> https://stackoverflow.com/questions/52888214/how-to-set-environment-variable-in-react-js
+```
+"build": "set \"CI=false\" && react-app-rewired build",
+```
+or
+
 `.travis.yml`
 ```
 env:
@@ -68,9 +74,11 @@ env:
     - CI=false
 ```
 `.appveyor.yml`
-> https://stackoverflow.com/questions/52888214/how-to-set-environment-variable-in-react-js
 ```
-"build": "set \"CI=false\" && react-app-rewired build",
+install:
+  - ps: Install-Product node 12 x64
+  - set CI=false
+  - npm install
 ```
 
 #### `electron-builder --publish onTagOrDraft`
@@ -88,3 +96,7 @@ env:
 
 ```
 https://github.com/electron/electron/issues/9920#issuecomment-508276131
+
+### TODO
+* electron 6.0.1 macOS **Unexpected exit**
+* build main code

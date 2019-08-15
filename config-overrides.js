@@ -39,7 +39,7 @@ module.exports = {
   paths(paths, env) {
     paths.appIndexJs = path.resolve(__dirname, 'app/index.js')
     paths.appSrc = path.resolve(__dirname, 'app')
-    paths.appBuild = path.resolve(__dirname, 'dist')
+    paths.appBuild = path.resolve(__dirname, 'build/renderer')
     return paths
   },
 }

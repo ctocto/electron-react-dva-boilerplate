@@ -6,6 +6,11 @@
     "name": "northernerve",
     "email": "northernerve@gmail.com"
   },
+  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctocto/electron-react-dva-boilerplate.git"
+  },
   "dependencies": {
     "customize-cra": "^0.4.1",
     "dva": "^2.4.1",
@@ -33,19 +38,21 @@
   "main": "src/start.js",
   "scripts": {
     "start": "nf start -p 3000",
-    "build": "set \"CI=false\" && react-app-rewired build",
+    "build": "react-app-rewired build && npm run copy-electron",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node src/start-react",
     "react-start": "BROWSER=none react-app-rewired start",
     "pack": "electron-builder --dir",
-    "dist": "npm run build && electron-builder --publish onTagOrDraft",
+    "release": "npm run build && electron-builder --publish onTagOrDraft",
+    "dist": "npm run build && electron-builder",
     "dist-all": "electron-builder -mwl",
     "dist-mac": "electron-builder -m",
     "dist-win": "electron-builder -w",
     "dist-linux": "electron-builder -l",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "copy-electron": "cp -r ./src/. ./build/main"
   },
   "build": {
     "productName": "ElectronReactDvaBoilerplate",
@@ -57,16 +64,19 @@
         "releaseType": "prerelease"
       }
     ],
+    "compression": "store",
     "directories": {
       "buildResources": "resources",
       "output": "release"
     },
     "extends": null,
     "files": [
-      "dist/**/*",
-      "src/**/*",
+      "build/",
       "package.json"
     ],
+    "extraMetadata": {
+      "main": "build/main/start.js"
+    },
     "dmg": {
       "contents": [
         {
@@ -120,9 +130,8 @@
   ],
   "devDependencies": {
     "babel-plugin-react-require": "^3.1.1",
-    "electron": "^6.0.1",
+    "electron": "^5.0.6",
     "electron-builder": "^21.1.5",
-    
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.18.2",
     "less": "^3.9.0",
