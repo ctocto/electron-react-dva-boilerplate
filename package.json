@@ -12,27 +12,16 @@
     "url": "git+https://github.com/ctocto/electron-react-dva-boilerplate.git"
   },
   "dependencies": {
-    "customize-cra": "^0.4.1",
     "dva": "^2.4.1",
     "electron-log": "^3.0.7",
     "electron-updater": "^4.1.2",
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
     "history": "^4.9.0",
     "immer": "^3.1.3",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "redux": "^4.0.4",
-    "redux-actions": "^2.6.5",
-    "redux-saga": "^1.0.5"
+    "react-scripts": "3.0.1"
   },
   "homepage": "./",
   "main": "src/start.js",
@@ -52,8 +41,7 @@
     "dist-mac": "electron-builder -m",
     "dist-win": "electron-builder -w",
     "dist-linux": "electron-builder -l",
-    "postinstall": "electron-builder install-app-deps",
-    "copy-electron": "cp -r ./src/. ./build/main"
+    "postinstall": "electron-builder install-app-deps"
   },
   "build": {
     "productName": "ElectronReactDvaBoilerplate",
@@ -129,11 +117,16 @@
     "electron >= 1.6"
   ],
   "devDependencies": {
+    "customize-cra": "^0.4.1",
     "babel-plugin-react-require": "^3.1.1",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
     "electron": "^6.0.2",
     "electron-builder": "^21.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.18.2",
     "less": "^3.9.0",
