@@ -52,7 +52,8 @@
       "never"
     ],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    "react/require-default-props": ["warn", { "forbidDefaultForRequired": false }]
   },
   "parser": "babel-eslint",
   "extends": "airbnb",
