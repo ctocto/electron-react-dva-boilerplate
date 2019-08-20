@@ -102,3 +102,5 @@ https://github.com/electron/electron/issues/9920#issuecomment-508276131
   - ✅ update `electron-builder@^21.2.0`
 * build main code
   - ✅ `"build-main": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.main.prod.js --colors"`
+* webpack externals import/no-unresolved
+  - ❓
