@@ -97,10 +97,20 @@ install:
 ```
 https://github.com/electron/electron/issues/9920#issuecomment-508276131
 
+#### `Sync code changes in electron app while developing`
+```
+npm i -D nodemon
+
+// scripts
+"electron": "nodemon --watch src --exec 'electron .'",
+```
+> https://stackoverflow.com/questions/39250387/sync-code-changes-in-electron-app-while-developing
+
+
 ### TODO
 * electron 6.0 macOS **Unexpected exit**
   - ✅ update `electron-builder@^21.2.0`
 * build main code
   - ✅ `"build-main": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.main.prod.js --colors"`
-* webpack externals import/no-unresolved
+* webpack `externals` `import/no-unresolved`
   - ❓
